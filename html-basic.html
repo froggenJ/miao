@@ -1,10 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>HTML练习</title>
+    <meta charset="UTF-8">
+    <title>TEST</title>
 </head>
+
 <body>
-  <h1>123</h1>
+    <hgroup>
+      <h1 id="top">Lorem</h1>
+      <h2>Lorem ipsum.</h2>
+      <h3>Lorem ipsum dolor.</h3>
+    </hgroup>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt placeat, ullam voluptatum vel doloribus molestias ad incidunt maxime dignissimos accusamus explicabo ipsam officiis quia consequuntur in sit aliquid, laborum! Libero.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque debitis quasi consectetur repellendus perspiciatis dolores praesentium ratione ad. Nobis molestias ut unde sint! Animi porro est nostrum, voluptates mollitia magni.</p>
+    <a href="https://www.jd.com" target="_blank">在新窗口点开京东</a>
+    <a href="mailto:xiran@miao.com">点击给我发邮件</a>
+    <a href="#bottom">跳转到本页的底部</a>
+    <a href="" download="html-basic.html">点我可以下载一个文件</a>
+    <br>
+    <img src="/grape.jpg" alt="grape" title="这是一串葡萄" width="200" height="200">
+    <hr>
+    <hr>
+    <marquee behavior="" direction="">飘~~~</marquee>
+    这几种强调<em>有什么区别呢？</em><u>这个呢？</u><i>这个呢？</i><br>
+    &lt;
+    !-- 这段注释需要出现在页面里面 -->
+    <br>
+    html的注释怎么写？
+    <br>
+    下面是一段JavaScript代码，最合适何种标签标识呢？
+    <pre>
+    <code>
+      function a(){
+      return 8
+    }
+    </code>
+  </pre>
+    <hr>
+    <ul>
+        <li>小学<ol>
+                <li>一年级<ol>
+                        <li>上学期</li>
+                        <li>下学期</li>
+                    </ol>
+                </li>
+                <li>二年级</li>
+                <li>三年级</li>
+            </ol>
+        </li>
+        <li>中学</li>
+        <li>大学</li>
+    </ul>
+    <hr>
+    <dl>
+        <dt>班级</dt>
+        <dd>三年二班</dd>
+        <dt>老师</dt>
+        <dd>张老师</dd>
+        <dd>李老师</dd>
+        <dd>王老师</dd>
+        <dt>学生</dt>
+        <dd>小明</dd>
+        <dd>豆豆</dd>
+    </dl>
+    <hr>
+    <b>google搜索</b>
+    <br>
+    <form action="https://www.google.com/search" target="_blank">
+        <input type="text" placeholder="请输入想要搜索的内容" required name="q"><input type="submit" value="在新窗口打开搜索结果">
+    </form>
+    <hr>
+    <p>个人信息调查表</p>
+    <form action="">
+        <dl>
+            <dt>性别</dt>
+            <dd>
+                <label><input type="radio" name="sex">男</label>
+                <label><input type="radio" name="sex">女</label>
+            </dd>
+            <dt>年龄</dt>
+            <dd>
+                <select name="" id="">
+                    <option value="choose" hidden selected>请选择</option>
+                    <optgroup label="少年">
+                        <option value="six">1-6岁</option>
+                        <option value="twelve">6-12岁</option>
+                    </optgroup>
+                    <optgroup label="青年">
+                        <option value="six">13-15岁</option>
+                        <option value="twelve">16-18岁</option>
+                    </optgroup>
+                    <optgroup label="壮年">
+                        <option value="six">18-22岁</option>
+                        <option value="twelve">23-30岁</option>
+                    </optgroup>
+                </select>
+            </dd>
+            <dt>生日</dt>
+            <dd>
+                <input type="date">
+            </dd>
+            <dt>生辰</dt>
+            <dd>
+                <input type="time">
+            </dd>
+            <dt>照片</dt>
+            <dd>
+                <label><input type="file" hidden>点我上传照片，我比文件上传按钮好看</label>
+            </dd>
+            <dt>肤色</dt>
+            <dd>
+                <input type="color" name="" id="">
+            </dd>
+            <dt>自我介绍</dt>
+            <dd>
+                <textarea name="" id="" cols="30" rows="10">&lt;/textarea></textarea>
+            </dd>
+            <fieldset>
+                <legend>这里面全部禁用了</legend>
+                <input type="text" disabled>
+                <input type="text" disabled>
+                <input type="text" disabled>
+                <input type="text" disabled>
+            </fieldset>
+            <button>提交</button>
+            <button>重置</button>
+    </form>
+    </dl>
+    <div id="bottom"></div>
+    <a href="#top" style="float: right;">top</a>
 </body>
+
 </html>
