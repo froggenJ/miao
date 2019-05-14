@@ -1,0 +1,46 @@
+body{
+ 
+}
+.BigBody{
+  width: 600px;
+  margin:auto;
+}
+.headTop{
+  background-color: #000;
+  color:#fff;
+  margin-bottom: 10px;
+}
+.headTop p{
+  width: 600px;
+  margin:auto;
+}
+.box{
+  width: 177px;
+  height: 37px;
+  background-color: pink;
+  border: 3px solid;
+}
+
+.box:nth-child(3n+4){
+  margin-left: 216px;
+  margin-top: -43px;
+}
+
+.box:nth-child(3n+5){
+  margin-left: 432px;
+  margin-top: -43px;
+}
+.box:nth-child(3n+3){
+  margin-top: 15px;
+}
+.box:hover{
+  background-color: red;
+}
+.linkD ul li{
+  list-style-type: none;
+  border-bottom: 1px dotted;
+}
+.footer{
+  background-color: #ee82ee;
+  text-align: center;
+}
