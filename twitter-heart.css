@@ -1,0 +1,16 @@
+.heart{
+  width: 100px;
+  height: 100px;
+  border: 1px solid;
+  background-image: url(https://abs.twimg.com/a/1557861269/img/animations/web_heart_animation_edge.png?tdsourcetag=s_pctim_aiomsg);
+  display: block;   
+}
+
+#check{
+  display: none;
+}
+#check:checked + .heart{
+  background-position: -2800px 0;
+  transition: 1s steps(28);
+}
+

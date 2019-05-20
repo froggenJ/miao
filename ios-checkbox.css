@@ -1,81 +1,34 @@
-body{
-  background-color: rgba(0,0,0,0.08);
-}
 .out{
-  width: 151px;
-  height: 90px;
+  display: block;
+  width: 125px;
+  height: 70px;
   border-radius: 160px;
-  background-color: rgb(110,220,95);
+  
+  border:1px solid  rgb(208,207,207);
   position: relative;
-  z-index: 1;
+  transition: .6s;
 }
-
-.in{
-  width: 78px;
-  height: 78px;
+label::after{
+  content: '';
   border-radius: 160px;
-  box-shadow: 1px 1px 7px 2px rgb(190,190,190);
+  box-shadow: 0 0 10px 2px rgb(210,211,211);
+  width:62px;
+  height: 62px;
   background-color: #fff;
   position: absolute;
-  top: 6px;
-  left: 65px;
-  display: block;
-  z-index: 4;
-  transition: left 1s;
-  /*animation: inWidth 1s steps(1,start) infinite;*/
-  
-}
-
-@keyframes inWidth{
-  0%{
-    width: 78px;
-  }
-  50%{
-    width: 90px;
-  }
-  100%{
-    width: 78px;
-  }
-}
-#click:checked + .in{
-  /*向左移动 渐变*/
-  left:8px;
-
-}
-input{
+  top: 4px;
+  left:5px;
+  transition: 1s;
+} 
+#check{
   display: none;
 }
-.bgc{
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  border-radius: 160px;
+#check:checked + label::after{
+  margin-left: 53px;
+
 }
-.inbgc{
-  border-radius: 160px;
-  width: 0px;
-  height: 58px;
-  position: absolute;
-  top: 16px;
-  right: 49px;
-  z-index: 3;
-  background-color: #fff;
-  transition: 2s ease-in-out;
+#check:checked + .out{
+  background-color: rgb(48,243,75);
+  border-color:  rgb(48,243,75);
+  box-shadow: 0 0 0 35px rgb(48,243,75) inset;
 }
-#click:checked ~.inbgc{
-  background-color: #fff;
-  right:68px;
-  width: 67px;
-}
-#click:checked ~ .bgc{
-  background-color: #fff;
-  transition: background-color 0.8s;
-  border:2px solid rgb(207,207,207);
-  z-index: 2;
-}
-/*.out:has(> input:checked){
-  background-color: rgb(221,221,221);
-}*/

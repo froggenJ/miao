@@ -1,0 +1,31 @@
+body,html{
+  margin:0;
+  height: 100%;
+  box-sizing: border-box;
+}
+div{
+  height: 100%;
+}
+header{
+  height: 100px;
+  background-color: olive;
+}
+section{
+  height: calc(100% - 100px);
+  font-size: 0;
+}
+section *{
+  font-size: 16px;
+}
+aside{
+  width: 200px;
+  height: 100%;
+  background-color: lime;
+  display: inline-block;
+}
+main{
+  width: calc(100% - 200px);
+  height: 100%;
+  background-color: tan;
+  display: inline-block;
+}
