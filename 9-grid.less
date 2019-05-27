@@ -1,0 +1,99 @@
+
+
+.gridInline{
+  width: 178px;
+  height: 178px;
+  background-color: rgba(0,0,0,0.08);
+  font-size: 0;
+  text-align: center;
+  *{
+    font-size: initial;
+  }
+  span{
+  line-height: 50px;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border:3px solid blue;
+  background-color: #ccc;
+  margin-left: -3px;
+  margin-bottom: -3px;
+  //z-index 要定位
+  position: relative;
+  }
+  span:hover{
+    border:3px solid red;
+    //边框hover上层
+    z-index: 1
+  }
+}
+
+.gridFloat{
+  width: 162px;
+  xheight: 180px;
+  background-color:#ccc;
+  border: 3px solid;
+  overflow: hidden;
+  padding-bottom: 3px;
+  text-align: center;
+  span{
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    float: left;
+    border:3px solid blue;
+    margin: 0 -3px -3px 0;
+    position:relative;
+  }
+  span:hover{
+    border-color:red;
+    z-index: 1;
+  }
+}
+
+.gridLi{
+  ol{
+    width: 169px;
+    background-color:rgba(0,0,0,0.08);
+    overflow: hidden;
+    list-style-type: none;
+    text-align: center;
+    padding:0 0 3px 0;
+    li{
+
+      a{
+        display: inline-block;
+        float: left;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        border:3px solid blue;
+        margin:0 -3px -3px 0;
+        position: relative;
+      }
+      a:hover{
+        z-index: 1;
+        border-color:red;
+      }
+    }
+  }
+}
+
+table{
+  border-collapse:collapse;
+  tr{
+    border:3px solid blue;
+  }
+  col{
+    border:3px solid blue;
+  }
+  td{
+    width: 50px;
+    height: 50px;
+    border:3px dashed blue;
+    text-align: center;
+  }
+  td:hover{
+    border:3px solid red;
+  }
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>bootstrap-table</title>
+  <link rel="stylesheet/less" type="text/css" href="bootstrap-table.less">
+  <script src="less.min.js"></script>
+</head>
+<body>
+  <div class="select">
+    <ul id="test">
+      <li>table</li>
+      <li>table-dark</li>
+      <li>thead-dark</li>
+      <li>table-striped</li>
+      <li>table-dark table-striped</li>
+      <li>table-bordered</li>
+      <li>table-bordered table-dark</li>
+      <li>table-borderless</li>
+      <li>table table-borderless table-dark</li>
+      <li>table-hover</li>
+      <li>table-hover table-dark</li>
+      <li>table-sm</li>
+      <li>table-sm table-dark</li>
+    </ul>
+    <ul id="cellTest">
+      <li>table-active</li>
+      <li>table-default</li>
+      <li>table-primary</li>
+      <li>table-success</li>
+      <li>table-warning</li>
+      <li>table-danger</li>
+      <li>table-info</li>
+    </ul>
+  </div>
+  <div class="tables">
+    <div>
+      <!-- 第一个 -->
+      <table class="table" id="origin-table">
+        <thead>
+          <tr>
+          <th>#</th>
+          <th>first</th>
+          <th>last</th>
+          <th>handle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th>2</th>
+            <td>Jacko</td>
+            <td>Thkrel</td>
+            <td>@lfd</td>
+          </tr>
+          <tr>
+            <th>3</th>
+            <td>Trjdf</td>
+            <td>kfer</td>
+            <td>@kdlx</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+<script type="text/javascript">
+    var test_lis = document.getElementById("test").getElementsByTagName('li');
+    for(i=0;i<test_lis.length;i++){
+        test_lis[i].onclick = function(){
+          var classVal = "table "+this.innerHTML;
+          var div=document.getElementById('origin-table');
+          div.className=classVal;
+        }
+    }
+    // cell click
+    // 取li值
+    var cellTest_lis = document.getElementById("cellTest").getElementsByTagName('li');
+    for(i=0;i<cellTest_lis.length;i++){
+        cellTest_lis[i].onclick = function(){
+          var classValu = this.innerHTML;
+          // 取cell的td
+          var cells_list = document.getElementsByTagName("td");
+          for (i=0;i<cells_list.length;i++) {
+            cells_list[i].onclick = function () {
+              // 给td class赋值
+              this.className=classValu;
+            }
+          }
+          // th
+          var th_list = document.getElementsByTagName("th");
+          for (i=0;i<th_list.length;i++) {
+            th_list[i].onclick = function () {
+              // 给th所在tr class赋值
+              this.parentNode.className=classValu;
+            }
+          }
+        }
+    }
+  </script>
+</html>
