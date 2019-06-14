@@ -271,11 +271,11 @@ console.log(res)
   }
 </script>
 
-<script id="ch0104/12" type="x">
+<script id="ch0104/12">
   var a = +prompt()
   var btime =55+a/3
   var wtime = a/1.2
-  if(btime=wtime){
+  if(btime==wtime){
     console.log('All')
   }else if(btime<wtime){
     console.log('Bike')
@@ -322,11 +322,11 @@ console.log(res)
   var a = +prompt()
   var b = +prompt()
   var c = +prompt() 
-  a+b>c&&c>Math.abs(a-b)&&a+c>b&&b>Math.abs(a-c)&&b+c>a&&a>Math.abs(b-c)?console.log('YES'):console.log('NO') 
+  a+b>c&&c>Math.abs(a-b)&&a+c>b&&b>Math.abs(a-c)&&b+c>a&&a>Math.abs(b-c)?console.log('yes'):console.log('no') 
 </script>
 
 <script id="ch0104/17" type="x">
-  var year = +prompt()
+  var year = +prompt();
   (year%4==0)&&(year%100!=0)||(year%400==0)?console.log('Y'):console.log('N')
 </script>
 
@@ -380,8 +380,8 @@ console.log(res)
     } else {//delta < 0
       var s_delta = Math.sqrt(-delta)
 
-      var x1 = (-b) / (2 * a) + '+' +  (s_delta / (2 * a)).toFixed(5) + 'i'
-      var x2 = (-b) / (2 * a) + '-' +  (s_delta / (2 * a)).toFixed(5) + 'i'
+      var x1 = ((-b) / (2 * a)).toFixed(5) + '+' +  (s_delta / (2 * a)).toFixed(5) + 'i'
+      var x2 = ((-b) / (2 * a)).toFixed(5) + '-' +  (s_delta / (2 * a)).toFixed(5) + 'i'
 
       console.log(x1, x2)
     }
