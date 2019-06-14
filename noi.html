@@ -412,7 +412,7 @@ console.log(res)
     var a = +prompt()
     sum+=a
   }
-  console.log((sum/12).toFixed(2))
+  console.log("$"+(sum/12).toFixed(2))
 </script>
 
 <script id="ch0105/03" type="x">
@@ -447,23 +447,23 @@ console.log(res)
   console.log(comp)
 </script>
 
-<script id="ch0105/06" type="x">
+<script id="ch0105/06">
   var a = +prompt()
-  var comp = 0
-  var comp2 = 0
+  var max = 0
+  var min = -1
   for(var i = 0;i<a;i++){
     var b = +prompt()
-    if(comp2==0){
-      comp2 = b
+    if(min==-1){
+      min = b
     }
-    if(b<comp2){
-      comp2 = b
+    if(b<min){
+      min = b
     }
-    if(b>comp){
-      comp = b
+    if(b>max){
+      max = b
     }
   }
-  console.log(comp-comp2)
+  console.log(max-min)
 </script>
 <!-- 
 <script id="ch0105/07">
