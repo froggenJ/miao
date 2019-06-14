@@ -2,23 +2,122 @@ body{
   padding:0;
   margin: 0;
 }
+html{
+  box-sizing:border-box;
+}
+*,::before,::after{
+  box-sizing: inherit;
+};
+a{
+  color: inherit;
+  text-decoration: none;
+}
 header{
-  width: 100%;
   height: 40px;
-  color: #B0b0b0;
-  background-color: #333;
+  background-color:#333;
+  min-width: 1226px;
+  nav{
+    color: #b0b0b0;
+    width: 1226px;
+    margin:auto;
+    font-size: 0.75rem;
+    line-height: 40px;
+    div{
+      ul{
+        list-style-type: none;
+        padding:0;
+        li{
+          float: left;
+          margin-right: 15px;
+        }
+        .dapp{
+          position:relative;
+        }
+        .dapp::before{
+          content:'';
+          position: absolute;
+          top: 30px;
+          left: 10px;
+          display: none;
+          border:10px solid #fff;
+          border-top-width: 0; 
+          border-right:10px solid #333;
+          border-left:10px solid #333;
+        }
+        .dapp::after{
+            content: '小米商城app';
+            font-size: 15px;
+            color: #000;
+            text-align: center;
+            background-repeat: no-repeat;
+            background-size: 90px 90px;
+            background-position: 18px 40px;
+            background-image: url(https://i1.mifile.cn/f/i/17/appdownload/download.png?1);
+            display: none;
+            position:absolute;
+            top: 40px;
+            left: -40px;
+            width: 125px;
+            height: 152px;
+            box-shadow: 0px 2px 2px rgb(170,170,170);
+            border:1px solid #d4d4d4;
+            border-top-width:0;
+            background-color:#fff;
+            z-index: 5;
+        }
+        .dapp:hover::after,.dapp:hover::before{
+          display: block;
+        }
+        li:hover{
+          color: #fff;
+        }
+    
+      }
+    }
+  }
 }
 section{
   padding:20px 50px 50px 0;
   .headNav{
     width: 900px;
-    height: 60px;
-    background-color:lightgrey;
+    height: 55px;
     margin-bottom: 20px;
+    position:relative;
     img{
-      width: 100px;
-      height: 100px;
+      width: 55px;
+      height: 55px;
+      background-color: #ff6700;
     }
+    .navHover{
+      position:absolute;
+      top:0;
+      left: 0;
+      margin-left: 200px;
+      ul{
+        color: #000;
+        list-style-type: none;
+        li{
+          margin-left:20px;
+          float: left;
+        }
+      }
+      .hoverShow{
+        display: none;
+        position:absolute;
+        top:75px;
+        background-color:#fff;
+        width: 100%;
+        height: 200px;
+        margin-left: -9999px;
+        margin-right: -9999px;
+        padding-left:9999px;
+        padding-right:9999px;
+        z-index: 20;
+      }
+    }
+    .navHover:hover .hoverShow{
+        display: block;
+      }
   }
   .slider{
     width: 1226px;
@@ -54,5 +153,8 @@ section{
         height: 460px;
       }
     }
+  }
+  .fourbox{
+
   }
 }
