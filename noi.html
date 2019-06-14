@@ -23,28 +23,28 @@
 <script id="ch0103/04" type="x">
   var a = +prompt()
   var b = +prompt()
-  console.log(a/b,a%b)
+  console.log(parseInt(a/b),a%b)
 </script>
 
 <script id="ch0103/05" type="x">
   var a = +prompt()
   var b = +prompt()
-  console.log(a/b)
+  console.log((a/b).toFixed(9))
 </script>
 
 <script id="ch0103/06" type="x">
   var a = +prompt()
   var b = +prompt()
-  console.log(b/a*100+"%")
+  console.log((b/a*100).toFixed(3)+"%")
 </script>
 
 <script id="ch0103/07" type="x">
+  var x = +prompt()
   var a = +prompt()
   var b = +prompt()
   var c = +prompt()
   var d = +prompt()
-  var x = +prompt()
-  console.log((a*x*x*x +b*x*x+c*x+d).toFixed(7))
+  console.log((a*x*x*x+b*x*x+c*x+d).toFixed(7))
 </script>
 
 <script id="ch0103/08" type="x">
@@ -54,7 +54,7 @@
 
 <script id="ch0103/09" type="x">
   var a = +prompt()
-  console.log((2*a).toFixed(4),(2*3.14*a).toFixed(4),(3.14*a*a).toFixed(4))
+  console.log((2*a).toFixed(4),(2*3.14159*a).toFixed(4),(3.14159*a*a).toFixed(4))
 </script>
 
 <script id="ch0103/10" type="x">
@@ -66,12 +66,12 @@
 <script id="ch0103/11" type="x">
   var a = +prompt()
   var b = +prompt()
-  console.log(a%b)
+  console.log((a%b).toFixed(4))
 </script>
 
 <script id="ch0103/12" type="x">
   var a = +prompt()
-  console.log((4/3*3.14*a*a*a).toFixed(2))
+  console.log((4/3*3.14159*a*a*a).toFixed(2))
 </script>
 
 <script id="ch0103/13" type="x">
@@ -83,7 +83,7 @@
 </script>
 
 <script id="ch0103/14" type="x">
-  var Pi = 3.14
+  var Pi = 3.14159
   var h = +prompt()
   var r = +prompt()
   var res = 20000/(Pi * r * r * h)
@@ -150,3 +150,4 @@
   }
 console.log(res)
 </script>
+
