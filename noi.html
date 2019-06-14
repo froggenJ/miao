@@ -105,3 +105,48 @@
     console.log(n - parseInt(y/x)-1)
   }
 </script>
+
+<script id="ch0103/16" type="x">
+  var xa = +prompt()
+  var ya = +prompt()
+  var xb = +prompt()
+  var yb = +prompt()
+  console.log((Math.sqrt((xa-xb)*(xa-xb)+(ya-yb)*(ya-yb))).toFixed(3))
+</script>
+
+<script id="ch0103/17" type="x">
+  var xa = +prompt()
+  var ya = +prompt()
+  var xb = +prompt()
+  var yb = +prompt()
+  var xc = +prompt()
+  var yc = +prompt()
+  var a = Math.sqrt((xa-xb)*(xa-xb)+(ya-yb)*(ya-yb))
+  var b = Math.sqrt((xc-xb)*(xc-xb)+(yc-yb)*(yc-yb))
+  var c = Math.sqrt((xa-xc)*(xa-xc)+(ya-yc)*(ya-yc))
+  var p = (a+b+c)/2
+
+  console.log((Math.sqrt(p*(p-a)*(p-b)*(p-c)).toFixed(2)))
+</script>
+
+<script id="ch0103/18" type="x">
+  var a1 = +prompt()
+  var a2 = +prompt()
+  var n = +prompt()
+  console.log((n-1)*(a2-a1)+a1)
+</script>
+
+<script id="ch0103/19" type="x">
+  var a = +prompt()
+  var b = +prompt()
+  console.log(a*b)
+</script>
+
+<script id="ch0103/20" type="x">
+  var a = +prompt()
+  var res = 2
+  for (var i = 1; i < a; i++) {
+    res = res*2
+  }
+console.log(res)
+</script>
