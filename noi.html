@@ -465,62 +465,157 @@ console.log(res)
   }
   console.log(max-min)
 </script>
-<!-- 
-<script id="ch0105/07">
+
+<script id="ch0105/07" type="x">
   var a = +prompt()
+  var gs = 0
+  var ss = 0 
+  var cs = 0
+  for (var i = 0; i < a; i++) {
+    var g = +prompt()
+    var s = +prompt()
+    var c = +prompt()
+      gs = gs+g
+      ss = ss+s
+      cs = cs+c
+  }
+  console.log(gs,ss,cs,gs+ss+cs)
+</script>
+ 
+<script id="ch0105/08" type="x">
+  var a = +prompt()
+  var s =0
+  for (var i = 1; i < a; i++) {
+    var a1 = +prompt()
+    s = s+a1
+  }
+  console.log((a-2)*180-s)
+</script>
+
+<script id="ch0105/09" type="x">
+  var a = +prompt()
+  var b = +prompt();
+  if((a%2==0)&&(b%2==0)){
+    console.log((b-a)/2/2*(a+b))
+  }else if ((a%2)&&(b%2)){
+    console.log(((b-a)/2+1)/2*(a+b))
+  }else if (a%2) {
+    console.log((parseInt((b-a)/2)+1)/2*(a-1+b))
+  }else{
+    console.log((parseInt((b-a)/2)+1)/2*(a+1+b))
+  }
+</script>
+
+<script id="ch0105/10" type="x">
+  var a = +prompt()
+  var b = +prompt()
+  var an = parseInt(a/17)
+  var bn = parseInt(b/17)
+  var sum = 0
+  for (var i = an; i <= bn; i++) {
+    if(i*17>=a&&i*17<=b){
+      sum = sum+i*17
+    }
+  }
+  console.log(sum)  
+</script>
+
+<script id="ch0105/11" type="x">
+  var a = +prompt()
+  var sum1 = 0
+  var sum5 = 0
+  var sum10 = 0
+  for (var i = 0; i < a; i++) {
+    var b = +prompt();
+    (b==1)?(sum1++):(b==5)?(sum5++):(b==10)?(sum10++):0
+  }
+  console.log(sum1,sum5,sum10)
+</script>
+
+<script id="ch0105/12" type="x">
+  var N = +prompt()
+  var m = +prompt()
+  var sum = 0
+  for (var i = 0; i < N; i++) {
+    var a = +prompt();
+    (m==a)?sum++:0
+  }
+  console.log(sum)
+</script>
+
+<script id="ch0105/13" type="x">
+  var a = +prompt()
+  var b = +prompt()
+  var c = 1
+  for (var i = 0; i < b; i++) {
+    c=c*a
+  }
+  console.log(c)
+</script>
+
+<script id="ch0105/14" type="x">
+  var a = +prompt()
+  var b = +prompt()
+  var p = 0
+  for (var i = 0; i <= b; i++) {
+    a= a+p
+    p = (a*0.001)
+    console.log(a)
+  }
+  console.log(a.toFixed(4))
+</script>
+
+
+<script id="ch0105/15" type="x">
+  var R = +prompt()
+  var M = +prompt()
+  var Y = +prompt()
+  for (var i = 0; i < Y; i++) {
+    M = M*(1+R/100)
+    console.log(M)
+  }
+  console.log(Math.floor(M))
 
 </script>
 
-<script id="ch0105/08">
-  var a = +prompt()
 
+<script id="ch0105/16" type="x">
+  var n = +prompt()
+  var k = +prompt()
+  var m = 0
+  var my = 0
+  var f = 200
+  while(my<f){
+    f = f*(1+k/100)
+    my+=n
+    m++
+    if (m>20) {
+    break
+    }
+  }
+  if (m>20) {
+    console.log('Impossible')
+  }else{
+    console.log(m)
+  }
 </script>
 
-<script id="ch0105/09">
-  var a = +prompt()
 
+<script id="ch0105/17" type="x">
+  var a = +prompt()
+  var  an = new Array()
+  an[1] = 1
+  an[0] = 1
+  var sum = 0
+  a==1?sum=1:sum=2
+  for (var i = 2; i < a; i++) {
+    an[i]=an[i-2]+an[i-1]
+    sum+=an[i]
+  }
+  console.log(sum)
 </script>
 
-<script id="ch0105/10">
-  var a = +prompt()
-
-</script>
-
-<script id="ch0105/11">
-  var a = +prompt()
-
-</script>
-
-<script id="ch0105/12">
-  var a = +prompt()
-
-</script>
-
-<script id="ch0105/13">
-  var a = +prompt()
-
-</script>
-
-<script id="ch0105/14">
-  var a = +prompt()
-
-</script>
-
-<script id="ch0105/15">
-  var a = +prompt()
-
-</script>
-
-<script id="ch0105/16">
-  var a = +prompt()
-
-</script>
-
-<script id="ch0105/17">
-  var a = +prompt()
-
-</script>
-
+<!--
 <script id="ch0105/18">
   var a = +prompt()
 
