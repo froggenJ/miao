@@ -367,7 +367,7 @@ console.log(res)
   if (delta == 0) {
 
     var x = -b / 2 / a
-    console.log(x.toFixed(5))
+    console.log('x1=x2='+x.toFixed(5))
 
   } else {
     if (delta > 0) {
@@ -376,7 +376,7 @@ console.log(res)
       var x1 = (-b + s_delta) / 2 / a
       var x2 = (-b - s_delta) / 2 / a
 
-      console.log(x1.toFixed(5), x2.toFixed(5))
+      console.log('x1='+x1.toFixed(5), 'x2='+x2.toFixed(5))
     } else {//delta < 0
       var s_delta = Math.sqrt(-delta)
       if(a<0){
@@ -386,9 +386,7 @@ console.log(res)
         var x1 = ((-b) / (2 * a)).toFixed(5) + '+' +  (s_delta / (2 * a)).toFixed(5) + 'i'
         var x2 = ((-b) / (2 * a)).toFixed(5) + '-' +  (s_delta / (2 * a)).toFixed(5) + 'i'
       }
-
-
-      console.log(x1, x2)
+      console.log('x1='+x1, 'x2='+x2)
     }
   }
 </script>
@@ -640,28 +638,57 @@ console.log(res)
   }
 </script>
 
-
 <script id="ch0105/19" type="x">
   var a = +prompt()
+  var time = 0
+  for (var i = 0; i < a; i++) {
+    var x = +prompt()
+    var y = +prompt()
+    var p = +prompt()
+    time = time + Math.sqrt(x*x+y*y)/25
+    time = time+p*1.5
+  }
+  console.log(Math.ceil(time))
+
 
 </script>
 
-<!--
-<script id="ch0105/20">
+<script id="ch0105/20" type="x">
   var a = +prompt()
-
+  var sum = a
+  var h = 0
+  for (var i = 0; i < 10; i++) {
+    sum = sum+a
+    h = a/2
+    a = a/2
+  }
+  console.log(sum,h)
 </script>
 
-<script id="ch0105/21">
+
+<script id="ch0105/21" type="x">
   var a = +prompt()
+  while(a!=1){
+    if(a%2){
+      console.log(a+"*3+1="+(a*3+1))
+      a=a*3+1
+    }else{
+      console.log(a+"/2="+a/2)
+      a=a/2
+    }
+  }
+  console.log('end')
 
 </script>
 
 <script id="ch0105/22">
   var a = +prompt()
-
+  for (var i = 0; i <12; i++) {
+    
+  }
 </script>
 
+<!--
 <script id="ch0105/23">
   var a = +prompt()
 
