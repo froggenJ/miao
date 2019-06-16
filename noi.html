@@ -379,9 +379,14 @@ console.log(res)
       console.log(x1.toFixed(5), x2.toFixed(5))
     } else {//delta < 0
       var s_delta = Math.sqrt(-delta)
+      if(a<0){
+        var x1 = ((-b) / (2 * a)).toFixed(5) + '-' +  (-s_delta / (2 * a)).toFixed(5) + 'i'
+        var x2 = ((-b) / (2 * a)).toFixed(5) + '+' +  (-s_delta / (2 * a)).toFixed(5) + 'i'
+      }else{
+        var x1 = ((-b) / (2 * a)).toFixed(5) + '+' +  (s_delta / (2 * a)).toFixed(5) + 'i'
+        var x2 = ((-b) / (2 * a)).toFixed(5) + '-' +  (s_delta / (2 * a)).toFixed(5) + 'i'
+      }
 
-      var x1 = ((-b) / (2 * a)).toFixed(5) + '+' +  (s_delta / (2 * a)).toFixed(5) + 'i'
-      var x2 = ((-b) / (2 * a)).toFixed(5) + '-' +  (s_delta / (2 * a)).toFixed(5) + 'i'
 
       console.log(x1, x2)
     }
@@ -615,17 +620,33 @@ console.log(res)
   console.log(sum)
 </script>
 
+
+<script id="ch0105/18" type="x">
+  var a = +prompt()
+  var s = +prompt()
+  var si = +prompt()
+  var p = si/s
+  for (var i = 0; i < a-1; i++) {
+    var ns = +prompt()
+    var nsi = +prompt()
+    var np = nsi/ns
+    if ((np-p)>0.05) {
+      console.log('better')
+    }else if((p-np)>0.05){
+      console.log('worse')
+    }else{
+      console.log('same')
+    }
+  }
+</script>
+
+
+<script id="ch0105/19" type="x">
+  var a = +prompt()
+
+</script>
+
 <!--
-<script id="ch0105/18">
-  var a = +prompt()
-
-</script>
-
-<script id="ch0105/19">
-  var a = +prompt()
-
-</script>
-
 <script id="ch0105/20">
   var a = +prompt()
 
