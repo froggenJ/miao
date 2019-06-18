@@ -681,49 +681,161 @@ console.log(res)
 
 </script>
 
-<script id="ch0105/22">
-  var a = +prompt()
+<script id="ch0105/22" type="x">
+  var b = 0
+  var sum = 0
   for (var i = 0; i <12; i++) {
-    
+    var a = +prompt()
+    b = 300+b
+    if(a>b){
+      console.log(-i-1)
+      break
+    }else if(a<=b){
+      var c = b-a
+      //c=10
+      if(c>=100){
+        b=c%100
+        sum = sum +Math.floor(c/100)*100
+      }else{
+        b = c
+      }
+    }
+    if(i == 11){
+      console.log(sum*1.2)
+    }
   }
 </script>
 
-<!--
-<script id="ch0105/23">
+<script id="ch0105/23" type="x">
   var a = +prompt()
+  var b = +prompt()
+  var sum = 0
+  var d = 0
+  for (var i = 0; i<b;i++){
+    var c = +prompt()
+    sum +=c
+    if(sum>a){
+      d++
+    }
+  }
+  console.log(d)
 
 </script>
 
-<script id="ch0105/24">
+<script id="ch0105/24" type="x">
   var a = +prompt()
+  var time = 0
+  for(var i = 0;i < a; i++){
+    var b = +prompt()
+    var c = +prompt()
+    if(b<=140&&b>=90&&c>=60&&c<=90){
+      time++
+    }else{
+      time = 0
+    }
+  }
+  console.log(time)
+</script>
+
+<script id="ch0105/25" type="x">
+  //一个数七进制九进制 三位 表示顺序相反
+  //0--7  0--9
+  //abc  cba
+  //7:a+b*7+c*49
+  //9:c+b*9+a*81
+  //48c = 2b+80a
+
+  for(var a = 0;a<7;a++){
+    for(var b = 0;b<7;b++){
+      for(var c = 0;c<7;c++){
+        if(48*c==(2*b+80*a)){
+          console.log(a+b*7+c*49)
+          console.log(""+a+b+c)
+          console.log(""+c+b+a)
+          break 
+        }
+      }
+    }  
+  }
 
 </script>
 
-<script id="ch0105/25">
+
+<script id="ch0105/26" type="x">
+  //各位数字减去千位 减去百位 十位 大于0
   var a = +prompt()
+  var c = 0
+  for(var i = 0;i<a;i++){
+    var b = +prompt()
+    //个位
+    var ge = b%10
+    var ten = Math.floor(b/10)%10
+    var hun = Math.floor(b/100)%10
+    var tho = Math.floor(b/1000)%10
+    if((ge-tho-ten-hun)>0){
+      c++
+    }
+  }
+  console.log(c)
 
 </script>
 
-<script id="ch0105/26">
-  var a = +prompt()
-
-</script>
-
-<script id="ch0105/27">
-  var a = +prompt()
-
+<script id="ch0105/27" type="x">
+  var k = +prompt()
+  var sum = 0
+  for(var n = 1;;n++){
+    sum = sum+1/n
+    if(sum>k){
+      console.log(n)
+      break
+    }
+  }
 </script>
 
 <script id="ch0105/28">
   var a = +prompt()
-
+  var i = 1
+  var m
+  var arr = new Array();
+  for(;i<a;i=i*10){
+    var m = Math.floor(a/i)%10
+    i==1?arr[0]=m:0
+    for(var d =1;d<Math.log10(i);d++){
+      arr[d] =m
+      console.log(m)
+    }
+  }
+  for(var d =1;d<Math.log10(i);d++){
+    console.log(""+arr[d])
+  }
 </script>
 
-<script id="ch0105/29">
+<script id="ch0105/29" type="x">
   var a = +prompt()
-
+  if(a==0){
+    console.log(0)
+  }
+  if(a<0) {
+    a=-a
+    for(var i = 1;i<a;i=i*10){
+      var m = Math.floor(a/i)%10
+      var arr = new Array()
+      var d = Math.floor(i/10)
+      arr[d] = m
+    }
+    for(;d<=i;d++){
+      console.log("-"+arr[d])
+    }
+  }
+  for(var i = 1;i<a;i=i*10){
+    var m = Math.floor(a/i)%10
+    if(i==10&&m==0){
+      console.log(""+m)
+    }
+  }
 </script>
 
+<!--
 <script id="ch0105/30">
   var a = +prompt()
 
