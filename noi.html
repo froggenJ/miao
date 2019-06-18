@@ -563,7 +563,7 @@ console.log(res)
   for (var i = 0; i <= b; i++) {
     a= a+p
     p = (a*0.001)
-    console.log(a)
+    //console.log(a)
   }
   console.log(a.toFixed(4))
 </script>
@@ -575,7 +575,7 @@ console.log(res)
   var Y = +prompt()
   for (var i = 0; i < Y; i++) {
     M = M*(1+R/100)
-    console.log(M)
+    //console.log(M)
   }
   console.log(Math.floor(M))
 
@@ -599,23 +599,23 @@ console.log(res)
   if (m>20) {
     console.log('Impossible')
   }else{
-    console.log(m)
+    console.log(m+1)
   }
 </script>
 
-
 <script id="ch0105/17" type="x">
-  var a = +prompt()
-  var  an = new Array()
-  an[1] = 1
-  an[0] = 1
-  var sum = 0
-  a==1?sum=1:sum=2
-  for (var i = 2; i < a; i++) {
-    an[i]=an[i-2]+an[i-1]
-    sum+=an[i]
+  var n = +prompt()
+  var a = 1
+  var b = 1
+  var c = 1
+  for(var i =2;i < n;i++){
+    // c = a+b
+    // a = b
+    // b = c
+    b = a+b
+    a = b-a
   }
-  console.log(sum)
+  console.log(b)
 </script>
 
 
@@ -657,12 +657,12 @@ console.log(res)
   var a = +prompt()
   var sum = a
   var h = 0
-  for (var i = 0; i < 10; i++) {
-    sum = sum+a
+  for (var i = 0; i < 9; i++) {
     h = a/2
     a = a/2
+    sum = sum+a*2
   }
-  console.log(sum,h)
+  console.log(sum.toFixed(4),a.toFixed(7))
 </script>
 
 
@@ -677,7 +677,7 @@ console.log(res)
       a=a/2
     }
   }
-  console.log('end')
+  console.log('End')
 
 </script>
 
@@ -701,7 +701,7 @@ console.log(res)
       }
     }
     if(i == 11){
-      console.log(sum*1.2)
+      console.log(sum*1.2+20)
     }
   }
 </script>
@@ -718,7 +718,7 @@ console.log(res)
       d++
     }
   }
-  console.log(d)
+  console.log(b-d)
 
 </script>
 
@@ -792,7 +792,7 @@ console.log(res)
   }
 </script>
 
-<script id="ch0105/28">
+<script id="ch0105/28" type="x">
   var a = +prompt()
   var i = 1
   var m
