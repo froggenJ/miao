@@ -657,12 +657,12 @@ console.log(res)
   var a = +prompt()
   var sum = a
   var h = 0
-  for (var i = 0; i < 9; i++) {
+  for (var i = 0; i < 10; i++) {
     h = a/2
     a = a/2
     sum = sum+a*2
   }
-  console.log(sum.toFixed(4),a.toFixed(7))
+  console.log((sum-a*2).toFixed(4),a.toFixed(7))
 </script>
 
 
@@ -737,26 +737,42 @@ console.log(res)
   console.log(time)
 </script>
 
-<script id="ch0105/25" type="x">
+<script id="ch0105/25" type="">
   //一个数七进制九进制 三位 表示顺序相反
   //0--7  0--9
   //abc  cba
   //7:a+b*7+c*49
   //9:c+b*9+a*81
   //48c = 2b+80a
-
-  for(var a = 0;a<7;a++){
-    for(var b = 0;b<7;b++){
-      for(var c = 0;c<7;c++){
+  
+  for(var a = 1;a<6;a++){
+    for(var b = 0;b<6;b++){
+      for(var c = 1;c<6;c++){
         if(48*c==(2*b+80*a)){
           console.log(a+b*7+c*49)
-          console.log(""+a+b+c)
           console.log(""+c+b+a)
+          console.log(""+a+b+c)
           break 
         }
       }
     }  
   }
+  // for(var x = 100;x<=999;x++){
+  // if(
+  //   x%7==Math.floor(x/81)%9
+  //   &&
+  //   Math.floor(x/7)%7==Math.floor(x/9)%9
+  //   &&
+  //   Math.floor(x/49)%7==x%9
+  //   )
+  // {
+  //   console.log(x)
+    // console.log(""+Math.floor(x/49)%7+Math.floor(x/7)%7+x%7)
+    // console.log(""+Math.floor(x/81)%9+Math.floor(x/9)%9+x%9)
+  //   break
+
+  // }
+  // }
 
 </script>
 
