@@ -737,7 +737,7 @@ console.log(res)
   console.log(time)
 </script>
 
-<script id="ch0105/25" type="">
+<script id="ch0105/25" type="x">
   //一个数七进制九进制 三位 表示顺序相反
   //0--7  0--9
   //abc  cba
@@ -810,58 +810,66 @@ console.log(res)
 
 <script id="ch0105/28" type="x">
   var a = +prompt()
-  var i = 1
-  var m
-  var arr = new Array();
-  for(;i<a;i=i*10){
-    var m = Math.floor(a/i)%10
-    i==1?arr[0]=m:0
-    for(var d =1;d<Math.log10(i);d++){
-      arr[d] =m
-      console.log(m)
-    }
+  var n
+  var h
+  var s =""+a%10
+  for(var i = 10;i<a;i=i*10){
+    n = Math.floor(a/i)
+    h = n%10
+    s=s+" "+h
   }
-  for(var d =1;d<Math.log10(i);d++){
-    console.log(""+arr[d])
-  }
+  console.log(s)
 </script>
 
 <script id="ch0105/29" type="x">
   var a = +prompt()
-  if(a==0){
-    console.log(0)
+  var n
+  var sign=""
+  var fval=a%10
+  a<0?sign="-":0
+  a<0?a=-a:0
+  fval==0?fval="":0
+  var s = sign+fval
+  for(var i = 10;i<a;i=i*10){
+    n = Math.floor(a/i)%10
+    s=s+n
   }
-  if(a<0) {
-    a=-a
-    for(var i = 1;i<a;i=i*10){
-      var m = Math.floor(a/i)%10
-      var arr = new Array()
-      var d = Math.floor(i/10)
-      arr[d] = m
-    }
-    for(;d<=i;d++){
-      console.log("-"+arr[d])
-    }
-  }
-  for(var i = 1;i<a;i=i*10){
-    var m = Math.floor(a/i)%10
-    if(i==10&&m==0){
-      console.log(""+m)
-    }
-  }
+  console.log(s)
 </script>
 
-<!--
-<script id="ch0105/30">
-  var a = +prompt()
-
+<script id="ch0105/30" type="x">
+  var m = +prompt()
+  var k = +prompt()
+  if(m%19==0){
+    console.log('YES')
+  }else{
+    console.log('NO')
+  }
 </script>
 
 <script id="ch0105/31">
-  var a = +prompt()
+  var n = +prompt()
+  var m = +prompt()
+  //n light 
+  //m people
+  //m<=n off 1 on 2 off 3
+  var s = 1
+  for(var light = 1;light <= n;light++){
+    for(var ren = 1;ren <=m;ren++){
+      if(light%ren==0){
+        s=~s+2
+        console.log("light:"+light+":"+s)
+      }
+    }
+    if(s==0){
+      //console.log("123")
+      console.log(light+"号灯关")
+    }
+  }
 
 </script>
 
+<!--
 <script id="ch0105/32">
   var a = +prompt()
 
