@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>画图</title>
+  <style>
+    canvas {
+      border: 2px solid #f0f;
+      display: block;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <canvas width="400" height="300"></canvas>
+</body>
+<script>
+  var canvas = document.querySelector('canvas')
+  canvas.style.imageRendering = 'pixelated'
+  var ctx = canvas.getContext('2d')
+
+  function dot(x, y, color = 'black') {
+    ctx.fillStyle = color
+    ctx.fillRect(x, y, 1, 1)
+  }
+  /**
+   * YOUR TASK
+画图的题：
+画一条实线
+画一条一个实点一个空点的虚线
+画一条两个实点两个空点的虚线
+画一条三个实点两个空点的虚线
+画一条45度的斜线
+画一条跨越画布左上角和右下角的对角线
+画一个空心矩形
+画一个实心矩形
+画一个rgb色彩空间的某一面
+画一个空心的圆
+画一个实心的圆
+画一个大小合适的sin(x)的图像
+   */
+</script>
+<script>
+  // YOUR CODE GOES BELOW
+  //一条直线
+  for(var i = 50;i < 350;i++){
+    dot(i,50)
+  }
+  //虚线
+  for(var i = 25;i < 175;i++){
+    dot(2*i,100)
+  }
+  //two full two vain
+  for(var i =(50/4);i < (350/4);i++){
+    dot(4*i-2,150)
+    dot(4*i-1,150)
+  }
+  //three full two vain
+  for(var i = 10;i < 70;i++){
+    dot(5*i-3,200)
+    dot(5*i-2,200)
+    dot(5*i-1,200)
+  }
+
+  //45deg line
+  for(var i = 0;i < 300;i++){
+    dot(i,i)
+  }
+  //diagonal
+  for(var i =0;i < 400;i++){
+    dot(i,i*3/4)
+  }
+/*
+画一个空心矩形
+画一个实心矩形
+画一个rgb色彩空间的某一面
+画一个空心的圆
+画一个实心的圆
+画一个大小合适的sin(x)的图像
+*/
+  //hollow rectangle
+  for(var i = 25;i < 75;i++){
+    dot(i,25)
+    dot(i,75)
+  }
+  for(var i = 25;i < 75;i++){
+    dot(25,i)
+    dot(75,i)
+  }
+  //solid rcctangle
+  for(var i = 25;i < 75;i++){
+    for(var ii = 100;ii < 150;ii++){
+      dot(i,ii,color="red")
+    }
+  }
+  //color space one face
+  for(var i = 25;i < 75;i++){
+    //dot(i,ii,color="rgba("+(i-25)/50*255+",255,255,0.8)")
+    for(var ii = 175;ii < 225;ii++){
+      dot(i,ii,color="rgba(0,255,"+(i-25)/50*255+",0.8)")
+    }
+  }
+  //hollow circle
+  for(var deg = 0;deg < 360;deg++){
+    dot(Math.sin(deg)*50+200,Math.cos(deg)*50+50)
+  }
+
+
+  //solid circle
+  for(var deg = 0;deg < 360;deg++){
+    for(var i = 0;i < 50;i++){
+      dot(Math.sin(deg)*i+350,Math.cos(deg)*i+50)
+    }
+  }
+
+  //y = sin(x)
+  for(var i = 0;i < 400;i++){
+    //for(var ii = 100;ii < 200;ii++)
+    dot(i,Math.sin(i/10)*10+125)
+  }
+  
+
+
+
+
+</script>
+</html>

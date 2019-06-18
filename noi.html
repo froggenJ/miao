@@ -376,7 +376,7 @@ console.log(res)
       var x1 = (-b + s_delta) / 2 / a
       var x2 = (-b - s_delta) / 2 / a
 
-      console.log('x1='+x1.toFixed(5), 'x2='+x2.toFixed(5))
+      console.log('x1='+x1.toFixed(5)+";"+'x2='+x2.toFixed(5))
     } else {//delta < 0
       var s_delta = Math.sqrt(-delta)
       if(a<0){
@@ -386,7 +386,7 @@ console.log(res)
         var x1 = ((-b) / (2 * a)).toFixed(5) + '+' +  (s_delta / (2 * a)).toFixed(5) + 'i'
         var x2 = ((-b) / (2 * a)).toFixed(5) + '-' +  (s_delta / (2 * a)).toFixed(5) + 'i'
       }
-      console.log('x1='+x1, 'x2='+x2)
+      console.log('x1='+x1+";"+'x2='+x2)
     }
   }
 </script>
