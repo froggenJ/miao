@@ -847,15 +847,17 @@ console.log(res)
   }
 </script>
 
-<script id="ch0105/31" type="x">
+<script id="ch0105/31">
   var n = +prompt()
   var m = +prompt()
   //n light 
   //m people
   //m<=n off 1 on 2 off 3
-  
+  var res = ""
+  var flag = 0
   for(var light = 1;light <= n;light++){
     var s = 1
+    
     for(var ren = 1;ren <=m;ren++){
       if(light%ren==0){
         s=~s+2
@@ -863,10 +865,12 @@ console.log(res)
       }
     }
     if(s==0){
+      flag == 0?res = light:res =res+","+light
+      flag++
       //console.log("123")
-      console.log(light)
     }
   }
+  console.log(res)
 
 </script>
 
@@ -923,7 +927,7 @@ console.log(res)
     }
     sum = sum + 1/fac
   }
-  console.log(sum,toFixed(10))
+  console.log(sum.toFixed(10))
 </script>
 
 <script id="ch0105/36" type="x">
@@ -1047,7 +1051,7 @@ console.log(res)
   var a = +prompt()
   var count=1
   for(var k = 2;;k++){
-    if(count==a){
+    if(count==a){0
         console.log(k-1)
         break
     }
