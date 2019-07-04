@@ -1080,3 +1080,240 @@ console.log(res)
   }
   console.log(sum)
 </script>
+
+<script id="7" type="x">
+  var a = +prompt()
+  //judge this a if has 7 or can be 7 %
+  //every state
+  var flag = false
+  if(a%7==0){
+    flag=true
+  }else{
+    while(a>0){
+      var digit = a%10
+      if(digit==7){
+        flag =true
+        break
+      }
+      a = (a-digit)/10
+    }
+  }
+  flag?console.log('YES'):console.log('NO')
+</script>
+
+<script id="sort" type="x">
+  //three nums going down
+  var a = +prompt()
+  var b = +prompt()
+  var c = +prompt()
+  var arr = new Array()
+  arr[0] = a
+  arr[1] = b
+  arr[2] = c
+  for(var i = 0; i < 3;i++){
+    for(var j =0; j < 3;j++){
+      if(arr[j]<arr[j-1]){
+        var a = arr[j]
+        arr[j] = arr[j-1]
+        arr[j-1] = a
+      }
+    }
+  }
+  console.log(arr[0],arr[1],arr[2])
+</script>
+
+<script id="narcissistic" type="x">
+  function getNumber(n) {
+    return Number(prompt(n))
+  }
+
+  function getNumberWidth(n) {
+    //get this fucking number's width
+    //still use that fucking method
+    var width = 0
+    if(n==0){
+      width = 1
+    }
+    while(n>0){
+      width++
+      var digit = n%10
+      n = (n-digit)/10
+    }
+    return width
+  }
+
+  function isNarcissistic(n) {
+    //judge n if narcissistic
+    //var n =getNumber('give me a Number')
+    //narcis process is 
+    //get number's width
+    //得到这个数的every digit
+    var sum = 0
+    var m =n
+    //debugger
+    while(m>0){
+      var eres = 1
+      var digit = m%10
+      for(var i = 0;i < getNumberWidth(n);i++){
+        eres = eres*digit
+      }
+      m = (m - digit)/10
+      sum +=eres
+    }
+    return sum == n
+  }
+
+  var a = getNumber('give me a fucking narcissistic')
+  isNarcissistic(a)?console.log('YES'):console.log('NO')
+
+</script>
+
+<script id="narcissistics" type="x">
+    function getNumber(n) {
+    return Number(prompt(n))
+  }
+
+  function getNumberWidth(n) {
+    //get this fucking number's width
+    //still use that fucking method
+    var width = 0
+    if(n==0){
+      width = 1
+    }
+    while(n>0){
+      width++
+      var digit = n%10
+      n = (n-digit)/10
+    }
+    return width
+  }
+
+  function isNarcissistic(n) {
+    //judge n if narcissistic
+    //var n =getNumber('give me a Number')
+    //narcis process is 
+    //get number's width
+    //得到这个数的every digit
+    var sum = 0
+    var m =n
+    //debugger
+    while(m>0){
+      var eres = 1
+      var digit = m%10
+      for(var i = 0;i < getNumberWidth(n);i++){
+        eres = eres*digit
+      }
+      m = (m - digit)/10
+      sum +=eres
+    }
+    return sum == n
+  }
+
+  function narcissistics(n) {
+    for(var i = 0; i < n; i++){
+      isNarcissistic(i)?console.log(i):false
+    }
+  }
+
+  narcissistics(1000)
+</script>
+
+<script id="palindrom" type="x">
+  //judge a number whether a loopNumber
+  function getNumberWidth(n) {
+    var width = 0
+    if(n==0){
+      width = 1
+    }
+    while(n > 0){
+      width++
+      var digit = n%10
+      n = (n-digit)/10
+    }
+    return width
+  } 
+
+  function isPalindrom(n) {
+    //how i thinking...
+    //go front and go back is equal
+    //switch 
+    var res = 0
+    var m = n
+    //debugger
+    while(n > 0){
+      var digit = n%10
+      n = (n-digit)/10
+      //12321 
+      res = res*10+digit
+    }
+    res==m?console.log('YES'):console.log('NO')
+  }
+
+  function power(n,m) {
+    var res = 1
+    for(var i = 1;i <= m;i++){
+      res = res*n
+    }
+    return res
+  }
+  function isPalindrom2(n) {
+    var width = getNumberWidth(n)
+    for(var i = 1;i <= width/2;i++){
+      //12456 judge right if equal left
+      right = Math.floor(n/power(10,i-1))%10
+      left = Math.floor(n/power(10,(width-i)))%10
+      if(right!=left){
+        return false
+      }
+    }
+    return true
+  }
+
+  var n = +prompt()
+  isPalindrom2(n)?console.log('YES'):console.log('NO')
+</script>
+
+<script id="complete-number" type="x">
+  //number sum of his proper divisors
+  var a = +prompt()
+  var sum = 0
+  //thinking...get his divisors get sum 
+  //how %
+  for(var i = 1;i < a;i++){
+    if(a%i==0){
+      sum = sum+i
+    }
+  }
+  sum==a?console.log('YES'):console.log('NO')
+
+</script>
+
+<script id="complete-numbers" type="x">
+  function getPerfectNumber(n) {
+    for(var i = 1;i <= n;i++){
+      var sum = 0
+      for(var j = 0;j < i;j++){
+        if(i%j==0){
+          sum = sum + j
+        }
+      }
+      if(sum==i){
+        console.log(i)
+      }
+    }
+  }
+  getPerfectNumber(1000)
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+

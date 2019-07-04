@@ -1,0 +1,128 @@
+
+<script>
+  
+  function isLeapYear(year) {
+    if(year%400==0){
+      return true
+    }
+    if(year%100==0){
+      return false
+    }
+    if(year%4==0){
+      return true
+    }
+    return false
+  }
+
+  function getMonthDays(year,month) {
+    switch(month){
+      default:
+        return 31
+      case 2:
+        return isLeapYear(year)?29:28
+      case 4:
+      case 6:
+      case 9:
+      case 11:
+        return 30
+    }
+  }
+
+  function getDays(year,month) {
+    // body...
+    let days = 0
+    for(let i = 0;i<year;i++){
+      isLeapYear(i)?days+=366:days+=365
+    }
+    for(let i = 1;i<month;i++){
+      days+=getMonthDays(year,i)
+    }
+    return days
+  }
+
+  function getWeekDay(year,month) {
+    //2019 7月 周一
+    let today = 1
+    let days = getDays(year,month)
+    switch(days%7){
+      case 0:
+        return 6
+      case 1:
+        return 7
+      case 2:
+        return 1
+      case 3:
+        return 2
+      case 4:
+        return 3
+      case 5:
+        return 4
+      case 6:
+        return 5
+      default:
+        return 0
+    }
+  }
+
+  function getYearDate(year) {
+    //  
+    let res=`<div><span>`+year+`</span></div>`
+    for(let i = 1;i <= 12;i++){
+      let md = getMonthDays(year,i)
+      let wd = getWeekDay(year,i) 
+      res += `<table><caption>`+i
+      res += `<thead><tr>
+              <th>一</th>
+              <th>二</th>
+              <th>三</th>
+              <th>四</th>
+              <th>五</th>
+              <th>六</th>
+              <th>七</th></tr></thead><tbody>`
+      for(let k =1;k < md+wd;k++){
+        if(k%7==1){
+          res+="</tr><tr>"
+        }
+         
+        if(k<wd){
+          res+="<td></td>"
+        }else{
+          res+= "<td>"+(k-wd+1)+"</td>"
+        }    
+      }
+      res+=`</caption></tbody></table>`
+
+    }
+    //flex 布局 最后一行 靠左 添加table占位
+    //https://jsbin.com/cayilet/edit?html,css,output
+    res+=`<table></table><table></table><table></table>`
+    document.write(res)
+  }
+
+//let year =prompt()
+getYearDate(2019)
+</script>
+<style>
+  body{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+    padding-top:20px;
+  }
+  div{
+    position: fixed;
+    top:0;
+    width: 100%;
+    height: 20px;
+    background-color: #fff;
+  }
+  div span{
+    display: inline-block;
+    background-color: tan;
+  }
+  table{
+    width: 200px;
+    height: 200px;
+  }
+}
+</style>
