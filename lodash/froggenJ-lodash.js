@@ -3,5 +3,4 @@ var froggenJ = {
     return ary.filter(it=>it)
   },
 
-
 }
