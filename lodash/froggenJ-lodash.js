@@ -1,6 +1,7 @@
 var froggenJ = {
-  compact:function compact(ary) {
+  compact:function (ary) {
     return ary.filter(it=>it)
-  }
+  },
+
+
 }
-return compact
