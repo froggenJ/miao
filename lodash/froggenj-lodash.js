@@ -19,7 +19,7 @@ var froggenj = {
     var result = []
     for(var val of ary){
       if(Array.isArray(val)){
-        var flattenVal = falttenDeep(val)
+        var flattenVal = froggenj.falttenDeep(val)
         result.push(...flattenVal)
       }else{
         result.push(val)
@@ -32,7 +32,7 @@ var froggenj = {
     var result = []
     for(var val of ary){
       if(Array.isArray(val)){
-        var falttenVal = falttenDepth(val,depth-1)
+        var falttenVal = froggenj.falttenDepth(val,depth-1)
         result.push(...falttenVal)
       }else{
         result.push(val)
@@ -41,17 +41,13 @@ var froggenj = {
     return result
   },
 
-
-
-
-
   every:function (ary,predicate) {
     ary.reduce((result,item)=>{return result && predicate(item)},true)
   },
 
   some:function (ary,predicate) {
     // ary.reduce((result,item)=>{return result || predicate(item)},false)
-    return !every(ary,negate(predicate))
+    return !every(ary,froggenj.negate(predicate))
   },
 
   negate:function (f) {
