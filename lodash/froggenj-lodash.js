@@ -67,8 +67,65 @@ var froggenj = {
     return function (...args) {
       return !f(...args)
     }
-  }
+  },
 
+  //将函数的参数倒着传
+  filp:function (f) {
+    return function (...args) {
+      return f(...args.reverse())
+    }
+  },
+
+  //Array:
+  reverse:function (ary) {
+    var l = ary.length-1
+    var res = []
+    //ary.forEach(it=>{res.unshift(it)})
+    for(var i = l;i >=0;i--){
+      res.push(ary[i])
+    }
+    return res
+  },
+ 
+ //Function: 当调用次数小于n 调用fuc 否则调用最后一次
+ before: function (n,func) {
+    var times = 0 
+    var lastRes
+    return function (...args) {
+      times++
+     if(times < n){
+      return lastRes = func(...args)
+     }else{
+      return lastRes
+     }
+   }
+ },
+
+ after:function (n,func) {
+   var times = 0
+   return function (...args) {
+     times++
+     if(times >= n){
+      return func(...args)
+     }else{
+      return
+     }
+   } 
+ },
+
+ //Function ary
+ ary:function (f,n = f.length) {
+   return function (...args) {
+     return f(...args.slice(0,n))
+   }
+ },
+
+
+ unary:function (f) {
+   return function (...args) {
+     return f(...args[0])
+   }
+ },
 }
 
 
