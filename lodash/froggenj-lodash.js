@@ -1,4 +1,6 @@
 var froggenj = {
+
+  
   compact:function (arr) {
     return arr.filter(it=>it)
   },
@@ -41,19 +43,32 @@ var froggenj = {
     return result
   },
 
-  every:function (ary,predicate) {
-    ary.reduce((result,item)=>{return result && predicate(item)},true)
+  //每一个都满足
+  every: function(ary,predicate){
+    for(var i = 0;i <ary.length;i++){
+      if(!predicate(ary[i])){
+        return false
+      }
+    }
+    return true
   },
 
+  //其中一个满足
   some:function (ary,predicate) {
-    // ary.reduce((result,item)=>{return result || predicate(item)},false)
-    return !every(ary,froggenj.negate(predicate))
+    ary.reduce((result,item)=>{
+      if(result||predicate(item)){
+        return true
+      }
+    },false)
+    return false
   },
 
   negate:function (f) {
     return function (...args) {
       return !f(...args)
     }
-  },
+  }
 
 }
+
+
