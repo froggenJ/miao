@@ -42,7 +42,25 @@ var froggenj = {
     }
     return ary
   },
-  faltten:function (ary) {
+  /**
+   * @param [1,2,3],[1,2]
+   * @return [3]
+   */
+  difference:function(ary,values){
+    return ary.filter(it=>{
+      !values.includes(it)
+    })
+  },
+  differenceBy:function(ary,values,iteratee){
+    if(typeof(iteratee)=="function"){
+      return froggenj.difference(ary.filter(it=>iteratee(it)),values.filter(it=>iteratee(it)))
+      
+    }else if(typeof(iteratee)=="string"){
+      return forggenj.difference(ary.filter(it=>iteratee in it),values.filter(it=>iteratee in it))
+    }
+  },
+
+  flatten:function (ary) {
     var result = []
     for(var val of ary){
       if(Array.isArray(val)){
@@ -54,7 +72,7 @@ var froggenj = {
     return result
   },
 
-  falttenDeep:function (ary) {
+  flattenDeep:function (ary) {
     var result = []
     for(var val of ary){
       if(Array.isArray(val)){
@@ -67,7 +85,7 @@ var froggenj = {
     return result
   },
 
-  falttenDepth:function (ary,depth = 1) {
+  flattenDepth:function (ary,depth = 1) {
     var result = []
     for(var val of ary){
       if(Array.isArray(val)){
