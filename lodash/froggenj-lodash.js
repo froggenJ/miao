@@ -1,10 +1,47 @@
 var froggenj = {
-
-  
-  compact:function (arr) {
-    return arr.filter(it=>it)
+  /**
+   * 
+   * @param {*} [1,2,3],2
+   * @return [[1,2],[3]] 
+   */
+  chunk:function(ary,size = 1){
+    var res = []
+    var start = 0
+    var i = 0
+    while(i<ary.length){
+      i += size
+      if(i > ary.length){
+        res.push(ary.slice(start))
+      }else{
+        res.push(ary.slice(start,i))
+      }
+      start = i
+    }
+    return res
   },
-
+  /**
+   * 
+   * @param {*} ary [0,2,3,"",false,5]
+   * @return [2,3,5] 
+   */
+  compact:function (ary) {
+    return ary.filter(it=>it)
+  },
+  /**
+   * 
+   * @param {*} ary  [1,2],2,[3],[[4]]
+   * @return [1,2,2,3,[4]]
+   */ 
+  concat:function(ary,...values){
+    for(var val of values){
+      if(Array.isArray(val)){
+        ary.push(...val)
+      }else{
+        ary.push(val)
+      }
+    }
+    return ary
+  },
   faltten:function (ary) {
     var result = []
     for(var val of ary){
