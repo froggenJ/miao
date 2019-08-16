@@ -47,10 +47,15 @@ var froggenj = {
    * @return [3]
    */
   difference:function(ary,values){
-    return ary.filter(it=>{
-      !values.includes(it)
-    })
+    return ary.filter(it=>!values.includes(it))
   },
+  /**
+   * 
+   * @param {*} ary [1.2,2.1]
+   * @param {*} values [2.1,2.4]
+   * @param {*} iteratee Math.floor
+   * @return [1]
+   */
   differenceBy:function(ary,values,iteratee){
     if(typeof(iteratee)=="function"){
       return froggenj.difference(ary.filter(it=>iteratee(it)),values.filter(it=>iteratee(it)))
@@ -58,6 +63,15 @@ var froggenj = {
     }else if(typeof(iteratee)=="string"){
       return forggenj.difference(ary.filter(it=>iteratee in it),values.filter(it=>iteratee in it))
     }
+  },
+  /**
+   * 
+   * @param {ary} ary 
+   * @param {ary} values 
+   * @param {function} comparator 
+   */
+  differenceWith:function(ary,values,comparator){
+    
   },
 
   flatten:function (ary) {
