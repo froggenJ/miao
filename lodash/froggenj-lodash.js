@@ -89,7 +89,7 @@ var froggenj = {
   dropRight:function(ary,n){
     return ary.slice(0,n)
   },
-  
+ 
   flatten:function (ary) {
     var result = []
     for(var val of ary){
