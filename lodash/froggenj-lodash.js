@@ -60,7 +60,7 @@ var froggenj = {
    * @param {*} iteratee Math.floor
    * @return [1]
    */
-  differenceBy:function(ary,...values,iteratee){
+  differenceBy:function(ary,...values,iteratee=_.identity){
     if(typeof(iteratee)=="function"){
       return froggenj.difference(ary.filter(it=>iteratee(it)),values.filter(it=>iteratee(it)))
       
@@ -74,8 +74,8 @@ var froggenj = {
    * @param {ary} values 
    * @param {function} comparator 
    */
-  differenceWith:function(ary,values,comparator){
-    return ary.filter(it=>!comparator(it,values))
+  differenceWith:function(ary,...values,comparator){
+    return ary.filter(it=>!comparator(it,...values))
   },
   /**
    * 
@@ -83,7 +83,17 @@ var froggenj = {
    * @param {number} n 2
    * @returns [3]
    */
-
+  drop:function(ary,n=1){
+    return ary.slice(n)
+  },
+  dropRight:function(ary,n=1){
+    return ary.slice(0,n)
+  },
+  dropRightWhile:function(ary,predicate){
+    if(typeof(predicate)=="function"){
+      
+    }
+  },
   flatten:function (ary) {
     var result = []
     for(var val of ary){
