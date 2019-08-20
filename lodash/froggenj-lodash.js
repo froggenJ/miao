@@ -53,13 +53,13 @@ var froggenj = {
     }
     return ary.filter(it=>!cmp.includes(it))
   },
-  /**
-   * 
-   * @param {*} ary [1.2,2.1]
-   * @param {*} values [2.1,2.4]
-   * @param {*} iteratee Math.floor
-   * @return [1]
-   */
+  // /**
+  //  * 
+  //  * @param {*} ary [1.2,2.1]
+  //  * @param {*} values [2.1,2.4]
+  //  * @param {*} iteratee Math.floor
+  //  * @return [1]
+  //  */
   // differenceBy:function(ary,values,iteratee=_.identity){
   //   if(typeof(iteratee)=="function"){
   //     return froggenj.difference(ary.filter(it=>iteratee(it)),values.filter(it=>iteratee(it)))
@@ -77,18 +77,18 @@ var froggenj = {
   // differenceWith:function(ary,...values,comparator){
   //   return ary.filter(it=>!comparator(it,...values))
   // },
-  /**
-   * 
-   * @param {array} ary [1,2,3]
-   * @param {number} n 2
-   * @returns [3]
-   */
-  drop:function(ary,n=1){
-    return ary.slice(n)
-  },
-  dropRight:function(ary,n=1){
-    return ary.slice(0,n)
-  },
+  // /**
+  //  * 
+  //  * @param {array} ary [1,2,3]
+  //  * @param {number} n 2
+  //  * @returns [3]
+  //  */
+  // drop:function(ary,n=1){
+  //   return ary.slice(n)
+  // },
+  // dropRight:function(ary,n=1){
+  //   return ary.slice(0,n)
+  // },
   flatten:function (ary) {
     var result = []
     for(var val of ary){
