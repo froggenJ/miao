@@ -60,7 +60,7 @@ var froggenj = {
    * @param {*} iteratee Math.floor
    * @return [1]
    */
-  differenceBy:function(ary,...values,iteratee=_.identity){
+  differenceBy:function(ary,values,iteratee=_.identity){
     if(typeof(iteratee)=="function"){
       return froggenj.difference(ary.filter(it=>iteratee(it)),values.filter(it=>iteratee(it)))
       
