@@ -60,23 +60,23 @@ var froggenj = {
    * @param {*} iteratee Math.floor
    * @return [1]
    */
-  differenceBy:function(ary,values,iteratee=_.identity){
-    if(typeof(iteratee)=="function"){
-      return froggenj.difference(ary.filter(it=>iteratee(it)),values.filter(it=>iteratee(it)))
+  // differenceBy:function(ary,values,iteratee=_.identity){
+  //   if(typeof(iteratee)=="function"){
+  //     return froggenj.difference(ary.filter(it=>iteratee(it)),values.filter(it=>iteratee(it)))
       
-    }else if(typeof(iteratee)=="string"){
-      return forggenj.difference(ary.filter(it=>iteratee in it),values.filter(it=>iteratee in it))
-    }
-  },
-  /**
-   * 
-   * @param {ary} ary 
-   * @param {ary} values 
-   * @param {function} comparator 
-   */
-  differenceWith:function(ary,...values,comparator){
-    return ary.filter(it=>!comparator(it,...values))
-  },
+  //   }else if(typeof(iteratee)=="string"){
+  //     return forggenj.difference(ary.filter(it=>iteratee in it),values.filter(it=>iteratee in it))
+  //   }
+  // },
+  // /**
+  //  * 
+  //  * @param {ary} ary 
+  //  * @param {ary} values 
+  //  * @param {function} comparator 
+  //  */
+  // differenceWith:function(ary,...values,comparator){
+  //   return ary.filter(it=>!comparator(it,...values))
+  // },
   /**
    * 
    * @param {array} ary [1,2,3]
@@ -88,11 +88,6 @@ var froggenj = {
   },
   dropRight:function(ary,n=1){
     return ary.slice(0,n)
-  },
-  dropRightWhile:function(ary,predicate){
-    if(typeof(predicate)=="function"){
-      
-    }
   },
   flatten:function (ary) {
     var result = []
